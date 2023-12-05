@@ -22,7 +22,7 @@ data class Country(
     val currencies: List<Currencies> = emptyList(),
     val capital: List<String> = emptyList(),
     val ccn3: String? = null,
-    val flag: Flag? = null
+    val flags: Flag? = null
 )
 
 @Serializable

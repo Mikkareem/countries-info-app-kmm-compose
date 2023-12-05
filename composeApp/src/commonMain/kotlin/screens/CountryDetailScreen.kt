@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
@@ -20,6 +21,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
+import io.kamel.image.KamelImage
+import io.kamel.image.asyncPainterResource
 import screenevents.CountryDetailScreenEvent
 import screens.components.NetworkAwareContainer
 import viewmodels.CountryDetailComponent
@@ -46,8 +49,19 @@ fun CountryDetailScreen(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(24.dp)
             ) {
+                country.flags?.let {
+                    KamelImage(
+                        resource = asyncPainterResource(it.url),
+                        contentDescription = null,
+                        modifier = Modifier.size(100.dp)
+                    )
+                }
                 CompositionLocalProvider(LocalTextStyle provides LocalTextStyle.current.copy(color = Color.White, fontSize = 20.sp)) {
-
+                    Text("Name: ${country.name.official}")
+                    Text("Common Name: ${country.name.common}")
+                    Text("Capitals: ${country.capital.joinToString(",")}")
+                    Text("UN Member: ${if(country.UNMember) "YES" else "NO"}")
+                    country.independent?.let { Text("Independent: ${if(it) "YES" else "NO"}") }
                 }
                 Button(onClick = { component.onEvent(CountryDetailScreenEvent.GoBack) }) {
                     Text("Go Back")
