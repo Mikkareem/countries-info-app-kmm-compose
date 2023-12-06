@@ -1,3 +1,5 @@
+# Countries Info Application (Android & iOS) - Compose Multiplatform  
+
 This is a Kotlin Multiplatform project targeting Android, iOS.
 
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
@@ -11,4 +13,9 @@ This is a Kotlin Multiplatform project targeting Android, iOS.
   you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…  
+
+## Demo
+
+https://github.com/Mikkareem/countries-info-app-kmm-compose/assets/56153409/04a69ee7-3aa4-412b-949d-75a6f31df51e
+
