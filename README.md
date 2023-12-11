@@ -8,6 +8,7 @@ Compose Multiplatform Application targeting Android and iOS.
 - SwiftUI (few)
 - **Decompose** for Navigation/Viewmodels in Shared Code.
 - **Kamel** Image Loading KMP Library for Showing/Loading images in Jetpack Compose
+- Custom Kotlinx JSON Serialization
 - MVI Pattern
 
 ### Data Provider - RestCountries Api  
